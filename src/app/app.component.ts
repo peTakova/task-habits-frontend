@@ -1,12 +1,28 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+selector: 'app-root',
+templateUrl: './app.component.html',
+styleUrls: ['./app.component.css'],
+schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 })
 export class AppComponent {
-  title = 'task-habit-frontend';
+showMenu = false;
+darkModeActive = false;
+
+toggleMenu(): void {
+    this.showMenu = !this.showMenu;
+  }
+
+ modeToggleSwitch(): void {
+    this.darkModeActive = !this.darkModeActive;
+
+      if (this.darkModeActive) {
+        document.body.classList.add('dark-mode');
+      } else {
+        document.body.classList.remove('dark-mode');
+      }
+  }
 }
