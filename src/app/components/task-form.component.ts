@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TaskService } from '../services/task.service';
 import { Task } from '../models/task';
 
@@ -23,16 +22,25 @@ import { Task } from '../models/task';
         </form>
       </div>
     `,
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  standalone: true,
+  imports: [CommonModule, FormsModule]
 })
 export class TaskFormComponent {
-taskTitle: string = '';
+  taskTitle: string = '';
 
-constructor(private taskService: TaskService) {}
+  constructor(private taskService: TaskService) {}
 
   onSubmit(): void {
     if (this.taskTitle.trim()) {
-      const newTask: Task = { id: 0, title: this.taskTitle, completed: false };
+      const newTask: Task = {
+        id: 0,
+        title: this.taskTitle,
+        description: '',
+        dueDate: null,
+        status: 'PENDING',
+        userId: 0
+      };
+
       this.taskService.createTask(newTask).subscribe(() => {
         this.taskTitle = '';
       });

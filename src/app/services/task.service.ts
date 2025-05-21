@@ -8,9 +8,9 @@ import { AuthService } from './auth.service';
 providedIn: 'root'
 })
 export class TaskService {
-private apiUrl = 'http://localhost:7010/task';
+  private apiUrl = 'http://localhost:7010/task';
 
-constructor(private http: HttpClient, private authService: AuthService) {}
+  constructor(private http: HttpClient, private authService: AuthService) {}
 
   private getHeaders(): HttpHeaders {
     return new HttpHeaders({

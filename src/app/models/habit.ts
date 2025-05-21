@@ -1,8 +1,9 @@
 export interface Habit {
-  id?: number;
+  id: number;
   name: string;
   description: string;
   frequency: 'DAILY' | 'WEEKLY' | 'MONTHLY';
-  lastCompletedDate?: string;
+  lastCompletedDate: Date | null;
   userId?: number;
+  completed?: boolean;
 }

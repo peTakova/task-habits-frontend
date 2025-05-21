@@ -2,3 +2,47 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body.dark-mode .page-container,
+body.dark-mode .main-content,
+body.dark-mode app-task-list,
+body.dark-mode app-habit-list {
+  background-color: #1a202c;
+  color: #e2e8f0;
+}
+/* Base styles */
+body {
+  background-color: #f8f9fa;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #1a202c;
+  color: #e2e8f0;
+}
+
+body.dark-mode .main-content {
+  background-color: #1a202c;
+}
+
+body.dark-mode .border {
+  border-color: #4a5568;
+}
+
+body.dark-mode .bg-green-100 {
+  background-color: #2d3f2f;
+}
+body.dark-mode input,
+body.dark-mode button:not(.toggle-btn) {
+  background-color: #2d3748;
+  color: #e2e8f0;
+  border-color: #4a5568;
+}
+
+
+body.dark-mode li {
+  background-color: #2d3748;
+  border-color: #4a5568;
+}

@@ -11,7 +11,7 @@ import { AuthService } from './auth.service';
 export class HabitService {
   private apiUrl = 'http://localhost:7010/habit';
 
-  constructor(private http: HTTPClient, private authService: AuthService) {}
+  constructor(private http: HttpClient, private authService: AuthService) {}
 
   private getHeaders(): HttpHeaders {
     return new HttpHeaders({

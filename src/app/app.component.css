@@ -21,7 +21,7 @@
     transition: background-color 0.3s;
 }
 
-/* Menu tlačidlo na ľavej strane */
+/* Menu button */
 .menu-btn {
     cursor: pointer;
     padding: 10px;
@@ -37,7 +37,7 @@
     transition: 0.3s;
 }
 
-/* Stredná časť s logom */
+/* Center section */
 .center-section {
     flex-grow: 1;
     display: flex;
@@ -45,38 +45,24 @@
     align-items: center;
 }
 
-.menu-container {
-    display: flex;
-    align-items: center;
-}
-
-/* Hamburger menu */
-.menu-btn {
-    cursor: pointer;
-    padding: 10px;
-}
-
-.menu-btn span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    margin: 4px 0;
-    transition: 0.3s;
-}
-
-/* Logo styles */
+/* Logo */
 .logo-container {
-    text-align: center;
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
-.logo-image {
+.logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 40px;
     height: 40px;
+    background-color: #8e44ad;
+    color: white;
+    border-radius: 50%;
+    font-size: 20px;
     margin-right: 10px;
-    object-fit: contain;
 }
 
 .logo {
@@ -91,13 +77,7 @@
     color: #8e44ad;
 }
 
-/* Profile section */
-.profile {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
+/* Profile */
 .profile-icon {
     width: 40px;
     height: 40px;
@@ -137,6 +117,7 @@
     transition: 0.2s;
     display: flex;
     align-items: center;
+    border-left: 4px solid transparent;
 }
 
 .menu-item:hover {
@@ -157,20 +138,11 @@
     transition: margin-left 0.3s, background-color 0.3s;
 }
 
-/* Ak je menu aktívne, odsadiť obsah */
 .main-content.menu-open {
     margin-left: 250px;
 }
 
-/* Footer */
-footer {
-    margin-top: 2rem;
-    padding: 1rem 0;
-    text-align: center;
-    border-top: 1px solid #e2e8f0;
-    color: #4a5568;
-}
-
+/* Toggle */
 .simple-toggle {
     display: flex;
     align-items: center;
@@ -190,9 +162,8 @@ footer {
     background-color: #ccc;
     border-radius: 12px;
     border: none;
-    outline: none;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: 0.3s;
 }
 
 .toggle-btn:after {
@@ -204,7 +175,7 @@ footer {
     border-radius: 50%;
     top: 3px;
     left: 3px;
-    transition: transform 0.3s;
+    transition: 0.3s;
 }
 
 .toggle-btn.toggle-active {
@@ -215,99 +186,109 @@ footer {
     transform: translateX(26px);
 }
 
-/* Tmavý režim */
-body.dark-mode .header {
-    background-color: #2d3748;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
-
-body.dark-mode .menu-btn span {
-    background-color: #e2e8f0;
-}
-
-body.dark-mode .logo {
-    color: #e2e8f0;
-}
-
-body.dark-mode .simple-toggle span {
-    color: #e2e8f0;
-}
-
-body.dark-mode .side-menu {
-    background-color: #2d3748;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
-}
-
-body.dark-mode .menu-item {
-    color: #e2e8f0;
-}
-
-body.dark-mode .menu-item:hover {
-    background-color: #4a5568;
-}
-
-body.dark-mode .main-content {
-    background-color: #1a202c;
-    color: #e2e8f0;
-}
-
-body.dark-mode footer {
-    border-top-color: #4a5568;
-    color: #e2e8f0;
-}
-
 .active-menu-item {
     background-color: #f1f5f9;
     border-left: 4px solid #8e44ad;
     font-weight: 600;
 }
 
-body.dark-mode .active-menu-item {
-    background-color: #3a4556;
-    border-left: 4px solid #a855f7;
+.login-btn {
+  padding: 8px 16px;
+  background-color: #8e44ad;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.menu-item {
-    padding: 1rem 2rem;
-    color: #333;
-    cursor: pointer;
-    transition: 0.2s;
-    display: flex;
-    align-items: center;
-    border-left: 4px solid transparent;
+.login-btn:hover {
+  background-color: #9b59b6;
 }
 
-.menu-item:hover {
-    background-color: #f8f9fa;
+/* Dark mode */
+body.dark-mode .header {
+    background-color: #2d3748;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .menu-btn span,
+body.dark-mode .logo,
+body.dark-mode .simple-toggle span,
+body.dark-mode .menu-item {
+    color: #e2e8f0;
+}
+
+body.dark-mode .logo span,
+body.dark-mode .menu-item-icon {
+    color: #a855f7;
+}
+
+body.dark-mode .side-menu {
+    background-color: #2d3748;
 }
 
 body.dark-mode .menu-item:hover {
     background-color: #4a5568;
 }
 
-/* Responzívne správanie */
-@media only screen and (max-width: 768px) {
+body.dark-mode .main-content,
+body.dark-mode .page-container {
+    background-color: #1a202c;
+    color: #e2e8f0;
+}
+
+body.dark-mode .active-menu-item {
+    background-color: #3a4556;
+    border-left-color: #a855f7;
+}
+
+body.dark-mode .login-btn {
+  background-color: #a855f7;
+}
+
+body.dark-mode .login-btn:hover {
+  background-color: #b366f7;
+}
+
+body.dark-mode .page-title {
+    color: #e2e8f0;
+}
+
+body.dark-mode .page-subtitle {
+    color: #cbd5e0;
+}
+
+body.dark-mode input,
+body.dark-mode button:not(.toggle-btn) {
+    background-color: #2d3748;
+    color: #e2e8f0;
+    border-color: #4a5568;
+}
+
+body.dark-mode li {
+    border-color: #4a5568;
+}
+
+body.dark-mode .bg-green-100 {
+    background-color: #2a4a3a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
     .header {
         padding: 1rem;
     }
-
     .logo {
         font-size: 1.5rem;
     }
-
-    .logo-image {
-        width: 30px;
-        height: 30px;
-    }
-
     .simple-toggle span {
         display: none;
     }
-
     .main-content.menu-open {
         margin-left: 0;
     }
-
     .side-menu.active {
         width: 100%;
     }

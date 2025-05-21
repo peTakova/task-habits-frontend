@@ -1,9 +1,9 @@
 export interface Task {
-  id?: number;
+  id: number;
   title: string;
   description: string;
-  dueDate: Date;
-  status: 'PENIDNG' | 'COMPLETED';
+  dueDate: Date | null;
+  status: 'PENDING' | 'COMPLETED';
   userId?: number;
-  reminderMessage?: string;
+  //reminderMessage?: string;
 }
